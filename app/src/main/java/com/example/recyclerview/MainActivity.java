@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Country> countryList;
     private RecyclerView.LayoutManager linearLayoutManager, gridLayoutManager;
 
-    Button btnChange;
     boolean layoutType = false;
 
     @Override
@@ -27,17 +26,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerView);
-        btnChange = findViewById(R.id.btnChange);
         countryList = new ArrayList<>();
 
-        countryList.add(new Country(R.drawable.kz_flag, "Kazakhstan", 185));
-        countryList.add(new Country(R.drawable.usa_flag, "USA", 840));
-        countryList.add(new Country(R.drawable.uk_flag, "UK", 826));
-        countryList.add(new Country(R.drawable.spain_flag, "Spain", 724));
-        countryList.add(new Country(R.drawable.italy_flag, "Italy", 380));
-        countryList.add(new Country(R.drawable.germany_flag, "Germany", 276));
-        countryList.add(new Country(R.drawable.france_flag, "France", 250));
-        countryList.add(new Country(R.drawable.brazil_flag, "Brazil", 076));
+        countryList.add(new Country(R.drawable.kz_flag, "Kazakhstan", "Population: 18 000 000", "Capital: Nursultan", "President: Jomart Tokaev"));
+        countryList.add(new Country(R.drawable.usa_flag, "USA", "Population: 328 000 000", "Capital: Washington", "President: Joe Biden"));
+        countryList.add(new Country(R.drawable.uk_flag, "UK", "Population: 66 000 000", "Capital: London", "Prime Minister: Boris Johnson"));
+        countryList.add(new Country(R.drawable.spain_flag, "Spain", "Population: 47 000 000", "Capital: Madrid", "Prime Minister: Pedro Sanchez"));
+        countryList.add(new Country(R.drawable.italy_flag, "Italy", "Population: 60 000 000", "Capital: Rome", "President: Sergio Mattarella"));
+        countryList.add(new Country(R.drawable.germany_flag, "Germany", "Population: 83 000 000", "Capital: Berlin", "President: Frank-Walter Steinmeier"));
+        countryList.add(new Country(R.drawable.france_flag, "France", "Population: 66 990 000", "Capital: Paris", "President: Frédéric Macron"));
+        countryList.add(new Country(R.drawable.brazil_flag, "Brazil", "Population: 209 000 000", "Capital: Brazil", "President: Jair Messias Bolsonaro"));
 
         countryListAdapter = new CountryListAdapter(this, countryList);
 
@@ -47,20 +45,5 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(countryListAdapter);
 
-        btnChange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                layoutType = !layoutType;
-                if(layoutType) {
-                    recyclerView.setLayoutManager(gridLayoutManager);
-                    countryList.remove(0);
-                }else {
-                    recyclerView.setLayoutManager(linearLayoutManager);
-                }
-
-                countryListAdapter.notifyDataSetChanged();
-
-            }
-        });
     }
 }

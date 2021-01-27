@@ -17,7 +17,7 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
 
     public class MyTViewHolder extends RecyclerView.ViewHolder{
         public ImageView photo;
-        public TextView title, code;
+        public TextView title, code, capital, president;
 
         public MyTViewHolder(View view){
             super(view);
@@ -25,6 +25,8 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
             photo = view.findViewById(R.id.photo);
             title = view.findViewById(R.id.title);
             code = view.findViewById(R.id.code);
+            capital = view.findViewById(R.id.capital);
+            president = view.findViewById(R.id.president);
 
         }
     }
@@ -43,13 +45,15 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
     }
 
     @Override
-    public void  onBindViewHolder(final MyTViewHolder sborka, int position){
+    public void  onBindViewHolder(final MyTViewHolder nation, int position){
 
         Country item = countryList.get(position);
 
-        sborka.photo.setImageResource(item.getPhoto());
-        sborka.title.setText(item.getTitle());
-        sborka.code.setText(""+item.getCode());
+        nation.photo.setImageResource(item.getPhoto());
+        nation.title.setText(item.getTitle());
+        nation.code.setText(""+item.getCode());
+        nation.capital.setText(""+item.getCapital());
+        nation.president.setText(""+item.getPresident());
 
     }
 

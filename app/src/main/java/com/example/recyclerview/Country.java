@@ -3,12 +3,17 @@ package com.example.recyclerview;
 public class Country {
     int photo;
     String title;
-    int code;
+    String code;
+    String capital;
+    String president;
 
-    public Country(int photo, String title, int code){
+    public Country(int photo, String title, String code, String capital, String president){
         this.photo = photo;
         this.title = title;
         this.code = code;
+        this.capital = capital;
+        this.president = president;
+
     }
 
     public int getPhoto() {
@@ -19,7 +24,11 @@ public class Country {
         return title;
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
+
+    public String getCapital() { return capital; }
+
+    public String getPresident() { return  president; }
 }

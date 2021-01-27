@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="horizontal"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15sp">
 
     <ImageView
         android:id="@+id/photo"
@@ -15,7 +16,9 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginLeft="10sp"
+        >
 
         <TextView
             android:id="@+id/title"
@@ -26,13 +29,26 @@
             android:textStyle="bold"
             android:textSize="20sp"/>
 
-
         <TextView
             android:id="@+id/code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="185"
+            android:text="Population: 18 000 000"
             android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/capital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capital: Nursultan"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/president"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="President: Tokaev"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
